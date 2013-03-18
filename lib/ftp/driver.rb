@@ -39,8 +39,8 @@ module Ftp
           @user = 'anonymous'
           true
         else
-          @user = User.where(email: user).first
-          @user && @user.valid_password?(pass) && @user.directory
+          @user = User.where(uid: user).first
+          @user && @user.valid_ldap_password?(pass) && @user.directory
         end
       Rails.logger.info "#{val ? 'Successful' : 'Unsuccessful'} FTP sign in attempt for: #{user}"
       yield val

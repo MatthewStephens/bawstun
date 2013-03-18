@@ -8,7 +8,8 @@ Bawstun::Application.routes.draw do
   Hydra::BatchEdit.add_routes(self)
 
 
-  devise_for :users
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+  
   mount Sufia::Engine => '/'
 
 end

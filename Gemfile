@@ -41,6 +41,11 @@ group :production do
 end
 
 gem "devise"
+gem 'hydra-ldap'
+gem 'omniauth-ldap', '~> 1.0.3'
+
+
+
 gem "bootstrap-sass"
 
 gem 'kaminari', github: 'harai/kaminari', branch: 'route_prefix_prototype'
